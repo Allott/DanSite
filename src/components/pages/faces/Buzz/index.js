@@ -11,7 +11,7 @@ const Buzz = ({contactPage}) => {
         {items.map((item) => {
             const value = [...item].reduce((acc, curr) => acc + curr.charCodeAt(0), 0);
             const x = Math.round(Math.sin(value) * wiggle) + wiggle;
-            const y = Math.round(Math.cos(value) * wiggle) + wiggle
+            const y = Math.round(Math.cos(value) * wiggle) + wiggle;
             const right = `${x}px`;
             const top = `${y}px`;
             return <div
