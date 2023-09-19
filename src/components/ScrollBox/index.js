@@ -1,6 +1,7 @@
 import rotationConst from '../../constants/rotationConst'
 import useScroll from '@/utils/useScroll' 
 import useWindow from '@/utils/useWindow';
+import cn from 'classnames';
 
 const { scrollRate } = rotationConst;
 const halfPi = Math.PI/2;
@@ -27,9 +28,11 @@ const FaceBox = ({position, children}) => {
     const scroll = useScroll();
     const top = Math.round(position * (halfPi / scrollRate));
     const opacity = Math.max(100 - 2*Math.abs(scroll - top),0)
+    const isVisible = opacity > 0;
     return (
         <div 
-            className={`absolute max-w-4xl`} 
+            className={cn(`absolute max-w-4xl`,
+                {'hidden': !isVisible})} 
             style={{top: top, opacity: `${opacity}%`}}
             >
             {children}
