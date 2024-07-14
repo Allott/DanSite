@@ -8,9 +8,14 @@ const Landing = ({contactPage}) => (
         <Image src={me} alt="Dan" width="250" height="250" className='mb-8'/>
         <H1>Daniel Allott</H1>
         <H1>Front End Developer</H1>
-        <button onClick={()=> goToPage(contactPage)} className='z-50'>
-            <H2 underline>Contact me</H2>
-        </button>
+        <div className='flex flex-row items-center space-x-4'>
+            <button onClick={()=> goToPage(contactPage)} className='z-50'>
+                <H2 underline>Contact me</H2>
+            </button>
+            <a href='/docs/Resume.pdf' target="_blank" type='PDF' className='z-50'>
+                <H2 underline>Full Resume</H2>
+            </a>
+        </div>
     </div>
 )
 
