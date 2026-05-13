@@ -59,8 +59,23 @@ export default function Wedding() {
           justifyContent: 'center',
           padding: '24px',
           position: 'relative',
+          overflow: 'hidden',
         }}
       >
+        <img
+          src="/pictures/wedding/snwdrps.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute left-[5px] bottom-[5px] h-auto w-[clamp(225px,40vw,650px)] max-w-[45vw]"
+        />
+
+        <img
+          src="/pictures/wedding/snwdrps.png"
+          alt=""
+          aria-hidden="true"
+          className="pointer-events-none absolute right-[5px] bottom-[5px] h-auto w-[clamp(225px,40vw,650px)] max-w-[45vw] [transform:scaleX(-1)]"
+        />
+
         <section
           style={{
             display: 'flex',
@@ -68,14 +83,15 @@ export default function Wedding() {
             alignItems: 'center',
             textAlign: 'center',
             gap: '18px',
+            width: 'min(720px, 90vw)',
           }}
         >
           <h1 style={{ margin: 0, fontSize: '2.25rem' }}>Save the date</h1>
 
           <img
-            src="/pictures/me.png"
-            alt="Wedding placeholder"
-            style={{ maxWidth: '45vw', maxHeight: '30vh' }}
+            src="/pictures/wedding/bridge.png"
+            alt="Wedding bridge"
+            className="h-auto max-h-[30vh] w-screen max-w-none ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] sm:w-full sm:max-w-none sm:ml-0 sm:mr-0"
           />
 
           <p style={{ margin: 0, lineHeight: 1.6 }}>
@@ -122,26 +138,59 @@ export default function Wedding() {
               </p>
             </article>
           )}
+
+          <div
+            className="sm:hidden"
+            style={{
+              padding: '12px 24px',
+              width: 'fit-content',
+            }}
+          >
+            <p
+              style={{
+                margin: 0,
+                textAlign: 'center',
+                fontSize: '1.5rem',
+                fontWeight: 'bold',
+              }}
+            >
+              {timeLeft.done
+                ? 'It is wedding day!'
+                : `${timeLeft.days}d ${String(timeLeft.hours).padStart(2, '0')}h ${String(
+                    timeLeft.minutes
+                  ).padStart(2, '0')}m ${String(timeLeft.seconds).padStart(2, '0')}s`}
+            </p>
+          </div>
         </section>
 
-        <p
+        <div
+          className="hidden sm:block"
           style={{
             position: 'absolute',
-            bottom: '24px',
+            bottom: '32px',
             left: '50%',
             transform: 'translateX(-50%)',
-            margin: 0,
-            textAlign: 'center',
-            width: '100%',
-            padding: '0 24px',
+            backgroundColor: 'rgba(255, 255, 255, 0.5)',
+            borderRadius: '16px',
+            padding: '6px 12px',
+            width: 'fit-content',
           }}
         >
-          {timeLeft.done
-            ? 'It is wedding day!'
-            : `${timeLeft.days}d ${String(timeLeft.hours).padStart(2, '0')}h ${String(
-                timeLeft.minutes
-              ).padStart(2, '0')}m ${String(timeLeft.seconds).padStart(2, '0')}s`}
-        </p>
+          <p
+            style={{
+              margin: 0,
+              textAlign: 'center',
+              fontSize: '1.5rem',
+              fontWeight: 'bold',
+            }}
+          >
+            {timeLeft.done
+              ? 'It is wedding day!'
+              : `${timeLeft.days}d ${String(timeLeft.hours).padStart(2, '0')}h ${String(
+                  timeLeft.minutes
+                ).padStart(2, '0')}m ${String(timeLeft.seconds).padStart(2, '0')}s`}
+          </p>
+        </div>
       </main>
     </>
   )
