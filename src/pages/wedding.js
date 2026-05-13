@@ -60,23 +60,25 @@ export default function Wedding() {
           padding: '24px',
           position: 'relative',
           overflow: 'hidden',
+          backgroundColor: '#fdf8f0',
         }}
       >
         <img
           src="/pictures/wedding/snwdrps.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute left-[5px] bottom-[5px] h-auto w-[clamp(225px,40vw,650px)] max-w-[45vw]"
+          className="pointer-events-none absolute left-[5px] bottom-[5px] h-auto w-[clamp(225px,40vw,650px)] max-w-[min(400px,45vw)]"
         />
 
         <img
           src="/pictures/wedding/snwdrps.png"
           alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute right-[5px] bottom-[5px] h-auto w-[clamp(225px,40vw,650px)] max-w-[45vw] [transform:scaleX(-1)]"
+          className="pointer-events-none absolute right-[5px] bottom-[5px] h-auto w-[clamp(225px,40vw,650px)] max-w-[min(400px,45vw)] [transform:scaleX(-1)]"
         />
 
         <section
+          className="sm:mt-[-80px]"
           style={{
             display: 'flex',
             flexDirection: 'column',
@@ -86,7 +88,28 @@ export default function Wedding() {
             width: 'min(720px, 90vw)',
           }}
         >
-          <h1 style={{ margin: 0, fontSize: '2.25rem' }}>Save the date</h1>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '12px',
+            }}
+          >
+            <img
+              src="/pictures/wedding/chrryblssm.png"
+              alt=""
+              aria-hidden="true"
+              className="h-auto w-[90px]"
+            />
+            <h1 style={{ margin: 0, fontSize: '2.25rem' }}>Save the date</h1>
+            <img
+              src="/pictures/wedding/chrryblssm.png"
+              alt=""
+              aria-hidden="true"
+              className="h-auto w-[90px] [transform:scaleX(-1)]"
+            />
+          </div>
 
           <img
             src="/pictures/wedding/bridge.png"
@@ -94,7 +117,7 @@ export default function Wedding() {
             className="h-auto max-h-[30vh] w-screen max-w-none ml-[calc(50%-50vw)] mr-[calc(50%-50vw)] sm:w-full sm:max-w-none sm:ml-0 sm:mr-0"
           />
 
-          <p style={{ margin: 0, lineHeight: 1.6 }}>
+          <p style={{ margin: 0, lineHeight: 1.6, fontWeight: 'bold' }}>
             Han &amp; Dan
             <br />
             Are getting married
@@ -110,13 +133,13 @@ export default function Wedding() {
             <article
               style={{
                 width: 'min(720px, 90vw)',
-                border: '2px solid #0f0f0f',
+                border: '2px solid #8b0000',
                 borderRadius: '12px',
                 padding: '16px',
                 display: 'flex',
                 gap: '16px',
                 alignItems: 'center',
-                backgroundColor: '#fff',
+                backgroundColor: '#c8a0a0',
                 boxShadow: '0 6px 20px rgba(0, 0, 0, 0.08)',
               }}
             >
@@ -132,9 +155,9 @@ export default function Wedding() {
                 }}
               />
 
-              <p style={{ margin: 0, textAlign: 'left', lineHeight: 1.5 }}>
-                You are also invited to Dans 30th on [placeholder date] at
-                [placeholder location]
+              <p style={{ margin: 0, textAlign: 'left', lineHeight: 1.5, fontWeight: 'bold' }}>
+                You are also invited to Dans 30th on 5th of December at
+                a Glossop pub
               </p>
             </article>
           )}
